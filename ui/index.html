@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost; object-src 'none'; base-uri 'none'; form-action 'none'">
   <meta name="color-scheme" content="dark light">
   <title>Skill Desk</title>
-  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
   <link rel="stylesheet" href="style.css">
+  <script src="native.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <header class="titlebar">
-    <div class="app-brand"><img class="app-icon" src="../assets/icon.svg" width="24" height="24" alt=""><span>Skill Desk</span></div>
+    <div class="app-brand"><img class="app-icon" src="assets/icon.svg" width="24" height="24" alt=""><span>Skill Desk</span></div>
     <div class="window-controls">
       <button class="icon-button native-control" data-window="minimize" aria-label="Свернуть" title="Свернуть" data-icon="minimize"></button>
       <button class="icon-button native-control close-window" data-window="close" aria-label="Скрыть в трей" title="Скрыть в трей" data-icon="close"></button>

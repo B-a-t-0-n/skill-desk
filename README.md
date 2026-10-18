@@ -7,7 +7,8 @@
 
   <p>
     <img src="https://img.shields.io/badge/Windows-x64-0078D4?style=flat-square" alt="Windows x64">
-    <img src="https://img.shields.io/badge/Electron-44.7.0-47848F?style=flat-square" alt="Electron 44.7.0">
+    <img src="https://img.shields.io/badge/Rust-Tauri_2.12-DEA584?style=flat-square" alt="Rust + Tauri 2.12">
+    <img src="https://img.shields.io/badge/Версия-0.6.0-8CB4FF?style=flat-square" alt="Версия 0.6.0">
     <img src="https://img.shields.io/badge/Данные-локально-50A978?style=flat-square" alt="Локальные данные">
   </p>
 
@@ -38,11 +39,14 @@ Skill Desk показывает доступные скиллы, чтение и
 
 ## Установка
 
-1. Скачайте **SkillDesk-Windows-x64.zip** из [последнего релиза](https://github.com/B-a-t-0-n/skill-desk/releases/latest).
-2. Распакуйте архив в удобную папку.
-3. Запустите **SkillDesk.exe**.
+Скачайте приложение из [последнего релиза](https://github.com/B-a-t-0-n/skill-desk/releases/latest):
 
-Node.js и API-ключ для готовой сборки не нужны. При переносе приложения копируйте всю распакованную папку: файлы рядом с `SkillDesk.exe` необходимы для запуска.
+- **Установщик `.exe`** — установит приложение и при необходимости загрузит Microsoft Edge WebView2 Runtime.
+- **SkillDesk-Windows-x64.zip** — переносная версия: распакуйте архив и запустите **SkillDesk.exe**. В архиве только приложение и README; нужен установленный WebView2 Runtime, который обычно уже есть в Windows 10/11.
+
+Интерфейс работает в системном WebView2. Node.js и API-ключ не нужны.
+
+В версии **0.6.0** приложение перенесено с Electron на **Rust + Tauri**, привычный интерфейс сохранён. Настройки из `%LOCALAPPDATA%\Skill Desk` подхватываются автоматически.
 
 ## Использование
 
@@ -73,34 +77,63 @@ Node.js и API-ключ для готовой сборки не нужны. Пр
 
 ## Разработка
 
-Нужны **Node.js 24+** и **pnpm**. В папке проекта выполните:
+Версия 0.6.0 использует **Rust + Tauri 2.12**. Чтение SQLite и журналов, обработка сессий, настройки, окна и трей работают в Rust. Интерфейс — обычные HTML, CSS и JavaScript без сборщика и зависимостей npm. Node.js для сборки и работы приложения не требуется.
+
+Для Windows нужны **Rust stable**, **Visual Studio Build Tools с компонентом «Разработка классических приложений на C++» и Windows SDK**, а также **Microsoft Edge WebView2 Runtime**. Подробности — в [требованиях Tauri](https://v2.tauri.app/start/prerequisites/#windows).
+
+Проверка ядра и сборка переносимого приложения из папки проекта:
 
 ```powershell
-pnpm install
-node node_modules/electron/install.js
-pnpm test
-pnpm start
+cargo test --manifest-path src-tauri/Cargo.toml --no-default-features
+cargo build --release --manifest-path src-tauri/Cargo.toml --bin SkillDesk
+.\src-tauri\target\release\SkillDesk.exe
 ```
 
-Команда установки Electron нужна, если pnpm не запустил установочный скрипт зависимости автоматически.
+Для этой сборки CLI Tauri не нужен. Исполняемый файл появится в `src-tauri/target/release/SkillDesk.exe`.
 
-Сборка приложения:
+### Разработка и установщик
+
+Для режима разработки Tauri и создания установщика установите CLI один раз:
 
 ```powershell
-pnpm package
+cargo install tauri-cli --version '^2' --locked
+cargo tauri dev
+cargo tauri build
 ```
 
-Готовая папка появится в `release/SkillDesk-win32-x64`. `pnpm preview` запускает вспомогательный просмотр интерфейса по адресу `http://127.0.0.1:47832`; само Windows-приложение работает без HTTP-сервера.
+Установщик NSIS появится в `src-tauri/target/release/bundle/nsis`.
+
+Предпросмотр интерфейса в браузере:
+
+```powershell
+cargo run --manifest-path src-tauri/Cargo.toml --no-default-features --example skill-desk-data -- --preview
+```
+
+Откройте `http://127.0.0.1:47832`. Предпросмотр показывает локальные сессии; окна, виджеты и трей проверяются в приложении.
 
 Для отдельной папки данных или профиля можно задать переменные перед запуском:
 
 ```powershell
 $env:SKILL_DESK_CODEX_HOME = 'C:\path\to\codex-data'
 $env:SKILL_DESK_PROFILE = 'C:\path\to\skill-desk-profile'
-pnpm start
+cargo tauri dev
 ```
 
 `SKILL_DESK_CODEX_HOME` имеет приоритет над `CODEX_HOME`. Путь `SKILL_DESK_PROFILE` должен быть абсолютным.
+
+### Проверки
+
+Тесты Rust проверяют обработку сессий, чтение данных и сохранение настроек. В них включены 52 сценария совместимости с парсером версии на Electron.
+
+Дополнительные проверки требуют **Node.js 24+**; установка пакетов npm не нужна:
+
+```powershell
+npm run test:parity
+cargo build --manifest-path src-tauri/Cargo.toml --bin SkillDesk
+npm run test:desktop
+```
+
+`test:parity` запускает прежние регрессионные сценарии против Rust, `test:desktop` проверяет настоящее приложение Tauri/WebView2 на демонстрационных данных.
 
 ---
 

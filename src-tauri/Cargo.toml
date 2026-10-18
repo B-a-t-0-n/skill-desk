@@ -1,0 +1,49 @@
+[package]
+name = "skill-desk"
+version = "0.6.0"
+description = "Local Codex skill and session monitor"
+edition = "2021"
+rust-version = "1.90"
+default-run = "SkillDesk"
+autobins = false
+
+[lib]
+name = "skill_desk"
+path = "src/lib.rs"
+
+[[bin]]
+name = "SkillDesk"
+path = "src/main.rs"
+required-features = ["desktop"]
+
+[[example]]
+name = "skill-desk-data"
+path = "examples/data.rs"
+
+[features]
+default = ["desktop", "custom-protocol"]
+desktop = ["dep:tauri", "dep:tauri-plugin-single-instance", "dep:tauri-build"]
+custom-protocol = ["tauri?/custom-protocol"]
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"] }
+regex = "1"
+rusqlite = { version = "0.37", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+url = "2"
+tauri = { version = "2", optional = true, features = ["tray-icon", "image-png"] }
+tauri-plugin-single-instance = { version = "2", optional = true }
+
+[build-dependencies]
+tauri-build = { version = "2", optional = true , features = [] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
+panic = "abort"

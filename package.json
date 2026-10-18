@@ -1,7 +1,7 @@
 {
   "name":"skill-desk",
   "productName":"Skill Desk",
-  "version":"0.5.0",
+  "version":"0.6.0",
   "author":"Skill Desk contributors",
   "private":true,
   "description":"Навыки и активные сессии Codex на рабочем столе Windows",
@@ -9,16 +9,12 @@
   "homepage":"https://github.com/B-a-t-0-n/skill-desk#readme",
   "bugs":{"url":"https://github.com/B-a-t-0-n/skill-desk/issues"},
   "engines":{"node":">=24"},
-  "main":"electron/main.cjs",
   "scripts":{
-    "start":"electron .",
-    "test":"node --test tests/*.test.mjs tests/*.test.cjs",
-    "preview":"node scripts/preview.mjs",
-    "package":"node scripts/package.mjs",
-    "docs:screenshots":"node scripts/capture-docs.cjs"
-  },
-  "devDependencies":{
-    "electron":"44.7.0",
-    "@electron/packager":"20.3.0"
+    "start":"cargo tauri dev",
+    "test":"cargo test --manifest-path src-tauri/Cargo.toml",
+    "test:parity":"cargo build --manifest-path src-tauri/Cargo.toml --no-default-features --example skill-desk-data && node --test tests/migration-parity.mjs",
+    "test:desktop":"node scripts/smoke-tauri.mjs",
+    "preview":"cargo run --manifest-path src-tauri/Cargo.toml --no-default-features --example skill-desk-data -- --preview",
+    "package":"cargo tauri build"
   }
 }

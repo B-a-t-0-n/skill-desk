@@ -9,3 +9,5 @@ test-results/
 .DS_Store
 Thumbs.db
 desktop.ini
+src-tauri/target/
+src-tauri/gen/

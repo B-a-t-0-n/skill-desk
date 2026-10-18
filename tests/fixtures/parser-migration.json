@@ -1,0 +1,5123 @@
+[
+  {
+    "name": "empty and malformed",
+    "records": [
+      null,
+      42,
+      {},
+      {
+        "type": "unrecognized",
+        "payload": {},
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [],
+      "events": [],
+      "availableSnapshotAt": null,
+      "availableSource": null,
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "catalog",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "catalog delta",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": false,
+          "state": {
+            "environments": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "catalog full reset",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {}
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": false,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read Get-Location\nGet-Content -Raw 'c:\\users\\test\\.codex\\skills\\openai-docs\\SKILL.md'\nGet-Date",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "Get-Location\nGet-Content -Raw 'c:\\users\\test\\.codex\\skills\\openai-docs\\SKILL.md'\nGet-Date",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read gc 'C:/Users/test/.codex/skills/openai-docs/SKILL.md' | Select-Object -First 2",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "gc 'C:/Users/test/.codex/skills/openai-docs/SKILL.md' | Select-Object -First 2",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read type 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'; Get-Date",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "type 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'; Get-Date",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read cat 'file:///C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "cat 'file:///C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read cat './skills/example/SKILL.md'",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "cat './skills/example/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "./skills/example/SKILL.md",
+          "path": "./skills/example/SKILL.md",
+          "name": "example",
+          "description": "",
+          "available": false,
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "example: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "./skills/example/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "false read echo 'cat C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "echo 'cat C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "false read rg SKILL.md 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "rg SKILL.md 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "false read Write-Output 'example; cat C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "Write-Output 'example; cat C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "false read cat /ordinary.txt # C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "cat /ordinary.txt # C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "false read cat /ordinary.txt | cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "cat /ordinary.txt | cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "false read cat '$HOME/skills/SKILL.md'",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "cat '$HOME/skills/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "false read cat /skills/*/SKILL.md",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "cat /skills/*/SKILL.md",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read state {\"exit_code\":1}",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 1,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read state {\"exit_code\":null}",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": null,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read state {\"exit_code\":null,\"exitCode\":0}",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": null,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": [],
+            "exitCode": 0
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": null,
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": null
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read state {\"status\":\"in_progress\"}",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "in_progress",
+            "exit_code": 0,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read state {\"status\":\"failed\"}",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "failed",
+            "exit_code": 0,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "read state {\"type\":\"command_execution\",\"parsed_cmd\":[{\"type\":\"read\",\"path\":\"C:/Users/test/.codex/skills/openai-docs/SKILL.md\"}]}",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "command_execution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": [
+              {
+                "type": "read",
+                "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md"
+              }
+            ]
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": null,
+              "source": "command-execution"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": null
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Использую скилл `openai-docs` для проверки.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую скилл `openai-docs` для проверки."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": null,
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": true
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "openai-docs: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Использую навык OpenAI Docs для проверки.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую навык OpenAI Docs для проверки."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": null,
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": true
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "openai-docs: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration I am using openai-docs.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "I am using openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": null,
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": true
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "openai-docs: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Using openai-docs.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Using openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": null,
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": true
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "openai-docs: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Использую навыки: `pdf` и `openai-docs` для проверки.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую навыки: `pdf` и `openai-docs` для проверки."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": null,
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": true
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": null,
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": true
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "openai-docs: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "pdf:pdf: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "/skills/pdf/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Использую pdf для проверки того, доступен ли openai-docs.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую pdf для проверки того, доступен ли openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": null,
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": true
+        },
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "pdf:pdf: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "/skills/pdf/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Не использую openai-docs.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Не использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Я не всегда использую openai-docs.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Я не всегда использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Если необходимо, использую openai-docs.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Если необходимо, использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Например использую openai-docs.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Например использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Использую openai-docs?",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую openai-docs?"
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration > Использую openai-docs.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "> Использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration ```\nИспользую openai-docs\n```",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "```\nИспользую openai-docs\n```"
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Использую openai-docs-extra.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую openai-docs-extra."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "declaration Использую openai-docsЖ.",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую openai-docsЖ."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "analysis excluded",
+    "records": [
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "analysis",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "AgentMessage included",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "m",
+            "type": "AgentMessage",
+            "phase": "commentary",
+            "content": "Использую openai-docs."
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": null,
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": true
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "openai-docs: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "legacy function output success",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call_output",
+          "call_id": "c",
+          "output": "{\"exit_code\":0,\"output\":\"PRIVATE\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "loaded",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "function-call-output"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "legacy function output failure",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call_output",
+          "call_id": "c",
+          "output": "{\"exit_code\":1}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "legacy function output error",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call_output",
+          "call_id": "c",
+          "output": "{\"exit_code\":0,\"isError\":true}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "mirror reads and repeated messages",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call_output",
+          "call_id": "c",
+          "output": "{\"exit_code\":0}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "command-execution"
+            },
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "t",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": true,
+          "currentTurnDeclared": true
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        },
+        {
+          "kind": "declared",
+          "label": "openai-docs: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "current tool",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": {
+        "name": "functions.exec_command",
+        "startedAt": "2026-10-18T13:00:00.000Z"
+      },
+      "skills": [],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": null,
+      "availableSource": null,
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "old use",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "old"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "full": true,
+          "state": {
+            "host_skills": {
+              "body": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "item_completed",
+          "item": {
+            "id": "read",
+            "type": "CommandExecution",
+            "status": "completed",
+            "exit_code": 0,
+            "command": "Get-Content -Raw 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'",
+            "parsed_cmd": []
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "assistant",
+          "channel": "commentary",
+          "content": [
+            {
+              "type": "output_text",
+              "text": "Использую openai-docs."
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "new"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "active",
+      "statusSource": "task_started",
+      "currentTurnId": "new",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "declared",
+          "evidence": [
+            {
+              "kind": "loaded",
+              "label": "Файл SKILL.md прочитан",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "old",
+              "source": "command-execution"
+            },
+            {
+              "kind": "declared",
+              "label": "Агент сообщил о применении",
+              "at": "2026-10-18T13:00:00.000Z",
+              "turnId": "old",
+              "source": "assistant-message"
+            }
+          ],
+          "lastUsedAt": "2026-10-18T13:00:00.000Z",
+          "loadedAt": "2026-10-18T13:00:00.000Z",
+          "declaredAt": "2026-10-18T13:00:00.000Z",
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "old"
+        },
+        {
+          "kind": "loaded",
+          "label": "openai-docs: файл skill.md прочитан",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "old"
+        },
+        {
+          "kind": "declared",
+          "label": "openai-docs: агент сообщил о применении",
+          "at": "2026-10-18T13:00:00.000Z",
+          "skillId": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "turnId": "old"
+        },
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "new"
+        }
+      ],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "world-state",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "task_complete",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_complete",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "idle",
+      "statusSource": "task_complete",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "idle",
+          "label": "Ход завершён",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": null,
+      "availableSource": null,
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "task_completed",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_completed",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "idle",
+      "statusSource": "task_completed",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "idle",
+          "label": "Ход завершён",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": null,
+      "availableSource": null,
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "turn_aborted",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "turn_aborted",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "interrupted",
+      "statusSource": "turn_aborted",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        },
+        {
+          "kind": "interrupted",
+          "label": "Ход прерван",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": null,
+      "availableSource": null,
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "stale",
+    "records": [
+      {
+        "type": "event_msg",
+        "payload": {
+          "type": "task_started",
+          "turn_id": "t"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "function_call",
+          "call_id": "c",
+          "namespace": "functions",
+          "name": "exec_command",
+          "arguments": "{\"cmd\":\"cat 'C:/Users/test/.codex/skills/openai-docs/SKILL.md'\"}"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:20:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "stale-active-event",
+      "currentTurnId": "t",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [],
+      "events": [
+        {
+          "kind": "active",
+          "label": "Ход начат",
+          "at": "2026-10-18T13:00:00.000Z",
+          "turnId": "t"
+        }
+      ],
+      "availableSnapshotAt": null,
+      "availableSource": null,
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  },
+  {
+    "name": "metadata and times",
+    "records": [
+      {
+        "type": "session_meta",
+        "payload": {
+          "id": "abcdefghijk",
+          "cwd": "/work/project",
+          "source": {
+            "subagent": {
+              "thread_spawn": {
+                "parent_thread_id": "parent"
+              }
+            }
+          }
+        },
+        "timestamp": 1792328400
+      },
+      {
+        "type": "turn_context",
+        "payload": {
+          "turn_id": "context",
+          "model": "gpt-6",
+          "cwd": "/work/other"
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      },
+      {
+        "type": "world_state",
+        "payload": {
+          "state": {
+            "model": {
+              "slug": "next-model"
+            }
+          }
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "now": "2026-10-18T13:05:00Z",
+      "archived": 1,
+      "updated_at_ms": 1792328399000
+    },
+    "expected": {
+      "id": "abcdefghijk",
+      "title": "Сессия abcdefgh",
+      "cwd": "/work/other",
+      "model": "next-model",
+      "parentId": "parent",
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": "context",
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [],
+      "events": [],
+      "availableSnapshotAt": null,
+      "availableSource": null,
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": true
+    }
+  },
+  {
+    "name": "developer catalog",
+    "records": [
+      {
+        "type": "response_item",
+        "payload": {
+          "type": "message",
+          "role": "developer",
+          "content": [
+            {
+              "type": "input_text",
+              "text": "### Skill roots\n- `r0` = `C:/Users/test/.codex/skills`\n### Available skills\n- openai-docs: Official documentation. (file: r0/openai-docs/SKILL.md)\n- pdf:pdf: Read PDFs. (file: /skills/pdf/SKILL.md)\n"
+            }
+          ]
+        },
+        "timestamp": "2026-10-18T13:00:00Z"
+      }
+    ],
+    "metadata": {
+      "id": "thread-1",
+      "title": "Widget",
+      "now": "2026-10-18T13:05:00Z"
+    },
+    "expected": {
+      "id": "thread-1",
+      "title": "Widget",
+      "cwd": "",
+      "model": null,
+      "parentId": null,
+      "status": "unknown",
+      "statusSource": "no-lifecycle-event",
+      "currentTurnId": null,
+      "updatedAt": "2026-10-18T13:00:00.000Z",
+      "lastEventAt": "2026-10-18T13:00:00.000Z",
+      "currentTool": null,
+      "skills": [
+        {
+          "id": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "name": "openai-docs",
+          "description": "Official documentation.",
+          "path": "C:/Users/test/.codex/skills/openai-docs/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        },
+        {
+          "id": "/skills/pdf/SKILL.md",
+          "name": "pdf:pdf",
+          "description": "Read PDFs.",
+          "path": "/skills/pdf/SKILL.md",
+          "status": "available",
+          "evidence": [],
+          "lastUsedAt": null,
+          "loadedAt": null,
+          "declaredAt": null,
+          "available": true,
+          "currentTurnLoaded": false,
+          "currentTurnDeclared": false
+        }
+      ],
+      "events": [],
+      "availableSnapshotAt": "2026-10-18T13:00:00.000Z",
+      "availableSource": "developer-message",
+      "availableScope": "session",
+      "source": "local-rollout",
+      "archived": false
+    }
+  }
+]

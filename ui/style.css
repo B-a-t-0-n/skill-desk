@@ -15,7 +15,7 @@
 }
 * { box-sizing:border-box; }
 body { margin:0; min-width:0; height:100svh; overflow:hidden; background:var(--bg); color:var(--text); }
-button,input { font:inherit; -webkit-app-region:no-drag; }
+button,input { font:inherit; }
 button { color:inherit; cursor:pointer; }
 button:disabled { opacity:.5; cursor:wait; }
 button:focus-visible,input:focus-visible,summary:focus-visible { outline:2px solid var(--blue); outline-offset:3px; }
@@ -24,7 +24,7 @@ input[type="checkbox"] { width:18px; height:18px; accent-color:var(--blue); marg
 [hidden] { display:none !important; }
 ::selection { background:var(--blue-bg); }
 .icon { width:19px; height:19px; flex:none; vertical-align:middle; pointer-events:none; }
-.titlebar { height:48px; padding:0 10px 0 24px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); -webkit-app-region:drag; user-select:none; }
+.titlebar { height:48px; padding:0 10px 0 24px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); user-select:none; }
 .app-brand { display:flex; align-items:center; gap:10px; font-size:14px; font-weight:600; }
 .app-brand .app-icon { width:24px; height:24px; }
 .window-controls { display:flex; gap:4px; }
@@ -112,7 +112,7 @@ summary { color:var(--muted); cursor:pointer; font-size:14px; }
 body.widget-mode { min-width:0; }
 .widget-mode .titlebar { display:none; }
 #widget { height:100svh; display:flex; flex-direction:column; overflow:auto; }
-.widget-header { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:18px 17px 0 20px; -webkit-app-region:drag; }
+.widget-header { display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:18px 17px 0 20px; user-select:none; }
 .widget-identity { min-width:0; }
 .widget-title { margin:0; font-size:16px; font-weight:600; line-height:1.45; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow-wrap:anywhere; }
 .widget-controls { display:flex; gap:2px; flex:none; margin-top:-4px; }

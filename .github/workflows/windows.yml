@@ -1,0 +1,34 @@
+name: Windows
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+      - run: cargo fmt --manifest-path src-tauri/Cargo.toml --check
+      - run: cargo clippy --locked --manifest-path src-tauri/Cargo.toml --all-targets -- -D warnings
+      - run: cargo test --locked --manifest-path src-tauri/Cargo.toml
+      - run: cargo build --locked --manifest-path src-tauri/Cargo.toml --no-default-features --example skill-desk-data
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node --test tests/migration-parity.mjs
+      - run: cargo build --release --locked --manifest-path src-tauri/Cargo.toml --bin SkillDesk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SkillDesk-Windows-x64
+          path: src-tauri/target/release/SkillDesk.exe

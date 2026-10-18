@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "desktop",
+  "description": "Local Skill Desk windows can receive state updates. All actions use validated application commands.",
+  "windows": ["overview", "widget-*"],
+  "permissions": ["core:event:allow-listen", "core:event:allow-unlisten"]
+}

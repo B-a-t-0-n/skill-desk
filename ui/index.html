@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="dark light">
+  <title>Skill Desk</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="titlebar">
+    <div class="app-brand"><img class="app-icon" src="../assets/icon.svg" width="24" height="24" alt=""><span>Skill Desk</span></div>
+    <div class="window-controls">
+      <button class="icon-button native-control" data-window="minimize" aria-label="Свернуть" title="Свернуть" data-icon="minimize"></button>
+      <button class="icon-button native-control close-window" data-window="close" aria-label="Скрыть в трей" title="Скрыть в трей" data-icon="close"></button>
+    </div>
+  </header>
+  <main id="overview" class="app-layout">
+    <aside class="sidebar" aria-label="Сессии Codex">
+      <h1>Сессии</h1>
+      <div class="sidebar-tools">
+        <label class="search-field"><span data-icon="search"></span><input id="session-search" type="search" aria-label="Найти сессию" placeholder="Поиск" autocomplete="off" spellcheck="false"></label>
+        <div class="segmented" role="group" aria-label="Фильтр сессий"><button data-filter="all" aria-pressed="true" class="selected">Все</button><button data-filter="active" aria-pressed="false">В работе</button></div>
+      </div>
+      <nav id="session-list" class="session-list" aria-label="Список сессий"><p class="sidebar-empty">Загрузка…</p></nav>
+      <footer class="sidebar-footer"><button class="settings-button" id="settings-button"><span data-icon="settings"></span>Настройки</button></footer>
+    </aside>
+    <section class="workspace" aria-label="Выбранная сессия">
+      <div id="workspace-empty" class="workspace-empty"><h2>Скиллы агента</h2><p id="empty-message">Загрузка сессий…</p></div>
+      <div id="session-workspace" class="session-workspace" hidden>
+        <header class="session-header">
+          <div class="session-heading"><h2 id="session-title"></h2><button class="secondary-button" id="popout-button">Виджет</button></div>
+          <span id="session-status" class="session-status"></span>
+        </header>
+        <div class="workspace-scroll">
+          <div id="source-notice" class="source-notice" role="status" hidden></div>
+          <section class="skills-section" aria-label="Скиллы">
+            <div class="skills-toolbar">
+              <label class="search-field skill-search"><span data-icon="search"></span><input id="skill-search" type="search" placeholder="Найти скилл" aria-label="Найти скилл" autocomplete="off" spellcheck="false"></label>
+              <div class="segmented scope-control" role="group" aria-label="Период"><button id="current-scope" data-scope="current" aria-pressed="true" class="selected">Этот ход</button><button id="history-toggle" data-scope="history" aria-pressed="false">История</button></div>
+            </div>
+            <table class="skills-table" aria-label="Скиллы и статусы"><tbody id="skill-rows"></tbody></table>
+            <p id="skills-empty" class="inline-empty" hidden></p>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  <main id="widget" hidden></main>
+  <dialog id="source-dialog" aria-labelledby="source-title">
+    <div class="dialog-heading"><h2 id="source-title">Настройки</h2><button class="icon-button" data-close aria-label="Закрыть" data-icon="close"></button></div>
+    <div class="settings-controls"><button id="theme-button" class="secondary-button">Светлая тема</button><button id="refresh-button" class="secondary-button">Обновить</button></div>
+    <label class="checkbox-label"><input type="checkbox" id="subagents">Показывать субагентов</label>
+    <details><summary>О статусах</summary><dl class="signal-guide"><div><dt>Доступен</dt><dd>Скилл есть в контексте сессии.</dd></div><div><dt>Прочитан</dt><dd>Агент прочитал SKILL.md.</dd></div><div><dt>Заявлен</dt><dd>Агент сообщил о применении.</dd></div></dl><p class="help-note">Эти сигналы не подтверждают выполнение всех инструкций.</p></details>
+    <details><summary>Источник данных</summary><section class="source-details"><h3 id="source-name">Локальные журналы Codex</h3><p id="source-detail"></p><p id="source-warning" class="source-warning" hidden></p><ul id="source-info" hidden></ul><p id="source-sync"></p></section></details>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+</body>
+</html>

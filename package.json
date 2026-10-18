@@ -1,0 +1,24 @@
+{
+  "name":"skill-desk",
+  "productName":"Skill Desk",
+  "version":"0.5.0",
+  "author":"Skill Desk contributors",
+  "private":true,
+  "description":"Навыки и активные сессии Codex на рабочем столе Windows",
+  "repository":{"type":"git","url":"https://github.com/B-a-t-0-n/skill-desk.git"},
+  "homepage":"https://github.com/B-a-t-0-n/skill-desk#readme",
+  "bugs":{"url":"https://github.com/B-a-t-0-n/skill-desk/issues"},
+  "engines":{"node":">=24"},
+  "main":"electron/main.cjs",
+  "scripts":{
+    "start":"electron .",
+    "test":"node --test tests/*.test.mjs tests/*.test.cjs",
+    "preview":"node scripts/preview.mjs",
+    "package":"node scripts/package.mjs",
+    "docs:screenshots":"node scripts/capture-docs.cjs"
+  },
+  "devDependencies":{
+    "electron":"44.7.0",
+    "@electron/packager":"20.3.0"
+  }
+}

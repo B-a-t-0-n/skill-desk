@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Skill Desk</title>
+  <desc>A blue skill module with a connected green block on a graphite tile.</desc>
+  <rect x="2" y="2" width="508" height="508" rx="114" fill="#141619" stroke="#2a2e35" stroke-width="4"/>
+  <path d="M346 184v-28c0-24-20-44-44-44H156c-24 0-44 20-44 44v200c0 24 20 44 44 44h146c24 0 44-20 44-44v-28" fill="none" stroke="#8cb4ff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M218 256h88" fill="none" stroke="#8cb4ff" stroke-width="32" stroke-linecap="round"/>
+  <rect x="294" y="200" width="112" height="112" rx="26" fill="#79d7ab"/>
+</svg>

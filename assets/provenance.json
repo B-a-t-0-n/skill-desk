@@ -1,0 +1,14 @@
+{
+  "icon.svg": {
+    "origin": "Original Skill Desk vector artwork: an open blue skill module connected to a green block, drawn for this application. No third-party artwork.",
+    "palette": ["#141619", "#2a2e35", "#8cb4ff", "#79d7ab"]
+  },
+  "icon.png": {
+    "origin": "512px deterministic rasterization of icon.svg using sharp.",
+    "generator": "scripts/generate-icon.mjs"
+  },
+  "icon.ico": {
+    "origin": "Windows ICO containing PNG images rasterized directly from icon.svg at 16, 24, 32, 48, 64, 128 and 256px.",
+    "generator": "scripts/generate-icon.mjs"
+  }
+}
